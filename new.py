@@ -77,13 +77,13 @@ def run_bot(data_account, recover=1):
             src = element.get_attribute('src')
             
             # Simpan src ke dalam list
-            listnya = src_list.append(src+'\n')
+            src_list.append(src+'\n')
        
-            response = (
+        response = (
             supabase.table(SUPABASE_TABLE_NAME)
-            .insert({"result": listnya})
+            .insert({"result": src_list})
             .execute()
-        )
+        )    
 
 
 
